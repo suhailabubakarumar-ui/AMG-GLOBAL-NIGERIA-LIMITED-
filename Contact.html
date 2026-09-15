@@ -1,0 +1,921 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Contact - AMG Global Technology</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: #f5f7fa;
+            color: #172033;
+            line-height: 1.6;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        /* HEADER */
+
+        header {
+            background: #071b33;
+            color: white;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 3px 15px rgba(0,0,0,0.15);
+        }
+
+        .navbar {
+            max-width: 1200px;
+            margin: auto;
+            min-height: 75px;
+            padding: 10px 20px;
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .brand {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            color: white;
+        }
+
+        .brand img {
+            width: 52px;
+            height: 52px;
+            object-fit: contain;
+            border-radius: 10px;
+            background: white;
+        }
+
+        .brand-text h2 {
+            font-size: 18px;
+            line-height: 1.2;
+        }
+
+        .brand-text p {
+            font-size: 11px;
+            color: #ff8a00;
+        }
+
+        nav {
+            display: flex;
+            gap: 6px;
+        }
+
+        nav a {
+            color: white;
+            padding: 10px 12px;
+            border-radius: 7px;
+            font-size: 14px;
+            font-weight: bold;
+        }
+
+        nav a:hover,
+        nav a.active {
+            background: #ff8a00;
+        }
+
+        .menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            color: white;
+            font-size: 30px;
+            cursor: pointer;
+        }
+
+        /* HERO */
+
+        .hero {
+            background:
+                linear-gradient(
+                    rgba(7,27,51,0.92),
+                    rgba(7,27,51,0.92)
+                ),
+                url("logo.jpg");
+
+            background-size: cover;
+            background-position: center;
+
+            color: white;
+            text-align: center;
+            padding: 80px 20px;
+        }
+
+        .hero h1 {
+            font-size: 48px;
+            margin-bottom: 12px;
+        }
+
+        .hero h1 span {
+            color: #ff8a00;
+        }
+
+        .hero p {
+            color: #dce3eb;
+            font-size: 18px;
+        }
+
+        /* CONTACT */
+
+        .contact-section {
+            padding: 70px 20px;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: auto;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 45px;
+        }
+
+        .section-title h2 {
+            color: #071b33;
+            font-size: 34px;
+            margin-bottom: 10px;
+        }
+
+        .section-title p {
+            color: #697382;
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+        }
+
+        /* CONTACT CARDS */
+
+        .contact-card {
+            background: white;
+            padding: 30px;
+            border-radius: 18px;
+            border: 1px solid #e5e9ee;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.07);
+        }
+
+        .contact-card h3 {
+            color: #071b33;
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 15px;
+            padding: 18px 0;
+            border-bottom: 1px solid #edf0f3;
+        }
+
+        .contact-item:last-child {
+            border-bottom: none;
+        }
+
+        .contact-icon {
+            width: 45px;
+            height: 45px;
+            background: #fff2e3;
+            color: #ff8a00;
+            border-radius: 10px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            font-size: 22px;
+            flex-shrink: 0;
+        }
+
+        .contact-item h4 {
+            color: #071b33;
+            margin-bottom: 3px;
+        }
+
+        .contact-item p {
+            color: #697382;
+            font-size: 14px;
+        }
+
+        .contact-item a {
+            color: #ff8a00;
+            font-weight: bold;
+        }
+
+        .contact-item a:hover {
+            text-decoration: underline;
+        }
+
+        /* FORM */
+
+        .contact-form {
+            background: white;
+            padding: 30px;
+            border-radius: 18px;
+            border: 1px solid #e5e9ee;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.07);
+        }
+
+        .contact-form h3 {
+            color: #071b33;
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+
+        .form-group {
+            margin-bottom: 18px;
+        }
+
+        .form-group label {
+            display: block;
+            color: #071b33;
+            font-weight: bold;
+            font-size: 14px;
+            margin-bottom: 7px;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 13px;
+            border: 1px solid #dce1e7;
+            border-radius: 8px;
+            font-family: inherit;
+            font-size: 14px;
+            outline: none;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            border-color: #ff8a00;
+        }
+
+        .form-group textarea {
+            min-height: 130px;
+            resize: vertical;
+        }
+
+        .submit-btn {
+            width: 100%;
+            padding: 14px;
+            border: none;
+            border-radius: 8px;
+            background: #ff8a00;
+            color: white;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .submit-btn:hover {
+            background: #e87500;
+        }
+
+        /* WHATSAPP */
+
+        .whatsapp-box {
+            margin-top: 30px;
+            background: #071b33;
+            color: white;
+            padding: 30px;
+            border-radius: 18px;
+            text-align: center;
+        }
+
+        .whatsapp-box h3 {
+            color: #ff8a00;
+            margin-bottom: 8px;
+        }
+
+        .whatsapp-box p {
+            color: #dce3eb;
+            margin-bottom: 18px;
+        }
+
+        .whatsapp-btn {
+            display: inline-block;
+            background: #25D366;
+            color: white;
+            padding: 13px 25px;
+            border-radius: 8px;
+            font-weight: bold;
+        }
+
+        .whatsapp-btn:hover {
+            opacity: 0.9;
+        }
+
+        /* FOOTER */
+
+        footer {
+            background: #041222;
+            color: white;
+            padding: 40px 20px 20px;
+        }
+
+        .footer-grid {
+            max-width: 1100px;
+            margin: auto;
+
+            display: grid;
+            grid-template-columns: 1.2fr 1fr 1fr;
+            gap: 35px;
+        }
+
+        .footer-logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 15px;
+        }
+
+        .footer-logo img {
+            width: 50px;
+            height: 50px;
+            object-fit: contain;
+            background: white;
+            border-radius: 8px;
+        }
+
+        footer h3 {
+            color: #ff9200;
+            margin-bottom: 15px;
+        }
+
+        footer p,
+        footer a {
+            color: #c6ced8;
+            font-size: 14px;
+        }
+
+        footer a {
+            display: block;
+            margin-bottom: 8px;
+        }
+
+        footer a:hover {
+            color: #ff9200;
+        }
+
+        .copyright {
+            max-width: 1100px;
+            margin: 30px auto 0;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            text-align: center;
+            color: #9ca8b7;
+            font-size: 13px;
+        }
+
+        /* MOBILE */
+
+        @media (max-width: 900px) {
+
+            .menu-btn {
+                display: block;
+            }
+
+            nav {
+                display: none;
+                position: absolute;
+                top: 75px;
+                left: 0;
+                width: 100%;
+                background: #071b33;
+                flex-direction: column;
+                padding: 10px 20px 20px;
+            }
+
+            nav.show {
+                display: flex;
+            }
+
+            nav a {
+                text-align: center;
+                padding: 13px;
+            }
+
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 600px) {
+
+            .hero h1 {
+                font-size: 36px;
+            }
+
+            .hero p {
+                font-size: 16px;
+            }
+
+            .contact-section {
+                padding: 50px 15px;
+            }
+
+            .section-title h2 {
+                font-size: 28px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- HEADER -->
+
+    <header>
+
+        <div class="navbar">
+
+            <a href="index.html" class="brand">
+
+                <img src="logo.jpg"
+                     alt="AMG Global Technology Logo">
+
+                <div class="brand-text">
+
+                    <h2>AMG GLOBAL</h2>
+
+                    <p>TECHNOLOGY NIG. LTD.</p>
+
+                </div>
+
+            </a>
+
+            <button class="menu-btn"
+                    onclick="toggleMenu()">
+
+                ☰
+
+            </button>
+
+            <nav id="mainNav">
+
+                <a href="index.html">
+                    Home
+                </a>
+
+                <a href="about.html">
+                    About
+                </a>
+
+                <a href="ceo.html">
+                    CEO
+                </a>
+
+                <a href="products.html">
+                    Products
+                </a>
+
+                <a href="contact.html"
+                   class="active">
+                    Contact
+                </a>
+
+            </nav>
+
+        </div>
+
+    </header>
+
+
+    <!-- HERO -->
+
+    <section class="hero">
+
+        <h1>
+            Contact <span>Us</span>
+        </h1>
+
+        <p>
+            We are ready to hear from you.
+        </p>
+
+    </section>
+
+
+    <!-- CONTACT -->
+
+    <section class="contact-section">
+
+        <div class="container">
+
+            <div class="section-title">
+
+                <h2>
+                    Get In Touch
+                </h2>
+
+                <p>
+                    Contact AMG Global Technology for
+                    products, enquiries and business information.
+                </p>
+
+            </div>
+
+
+            <div class="contact-grid">
+
+
+                <!-- CONTACT INFORMATION -->
+
+                <div class="contact-card">
+
+                    <h3>
+                        Company Information
+                    </h3>
+
+
+                    <div class="contact-item">
+
+                        <div class="contact-icon">
+                            📍
+                        </div>
+
+                        <div>
+
+                            <h4>
+                                Address
+                            </h4>
+
+                            <p>
+                                Bata Market, Kano State,
+                                Nigeria
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="contact-item">
+
+                        <div class="contact-icon">
+                            📞
+                        </div>
+
+                        <div>
+
+                            <h4>
+                                Phone
+                            </h4>
+
+                            <p>
+
+                                <a href="tel:+2348136080000">
+                                    08136080000
+                                </a>
+
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="contact-item">
+
+                        <div class="contact-icon">
+                            💬
+                        </div>
+
+                        <div>
+
+                            <h4>
+                                WhatsApp
+                            </h4>
+
+                            <p>
+
+                                <a href="https://wa.me/2348136080000"
+                                   target="_blank">
+
+                                    Chat with us on WhatsApp
+
+                                </a>
+
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="contact-item">
+
+                        <div class="contact-icon">
+                            👤
+                        </div>
+
+                        <div>
+
+                            <h4>
+                                CEO
+                            </h4>
+
+                            <p>
+                                Aminu Muhammad Gama
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="contact-item">
+
+                        <div class="contact-icon">
+                            🏢
+                        </div>
+
+                        <div>
+
+                            <h4>
+                                Company
+                            </h4>
+
+                            <p>
+                                AMG Global Technology Nig. Ltd.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- CONTACT FORM -->
+
+                <div class="contact-form">
+
+                    <h3>
+                        Send Us a Message
+                    </h3>
+
+                    <form onsubmit="sendMessage(event)">
+
+                        <div class="form-group">
+
+                            <label>
+                                Your Name
+                            </label>
+
+                            <input
+                                type="text"
+                                id="name"
+                                placeholder="Enter your name"
+                                required
+                            >
+
+                        </div>
+
+
+                        <div class="form-group">
+
+                            <label>
+                                Phone Number
+                            </label>
+
+                            <input
+                                type="tel"
+                                id="phone"
+                                placeholder="Enter your phone number"
+                                required
+                            >
+
+                        </div>
+
+
+                        <div class="form-group">
+
+                            <label>
+                                Message
+                            </label>
+
+                            <textarea
+                                id="message"
+                                placeholder="How can we help you?"
+                                required
+                            ></textarea>
+
+                        </div>
+
+
+                        <button
+                            type="submit"
+                            class="submit-btn">
+
+                            Send Message on WhatsApp
+
+                        </button>
+
+                    </form>
+
+                </div>
+
+            </div>
+
+
+            <!-- WHATSAPP -->
+
+            <div class="whatsapp-box">
+
+                <h3>
+                    Need a Quick Response?
+                </h3>
+
+                <p>
+                    Contact us directly through WhatsApp.
+                </p>
+
+                <a
+                    href="https://wa.me/2348136080000"
+                    target="_blank"
+                    class="whatsapp-btn">
+
+                    💬 Chat on WhatsApp
+
+                </a>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- FOOTER -->
+
+    <footer>
+
+        <div class="footer-grid">
+
+            <div>
+
+                <div class="footer-logo">
+
+                    <img src="logo.jpg"
+                         alt="AMG Global Logo">
+
+                    <div>
+
+                        <strong>
+                            AMG GLOBAL
+                        </strong>
+
+                        <br>
+
+                        <small>
+                            TECHNOLOGY NIG. LTD.
+                        </small>
+
+                    </div>
+
+                </div>
+
+                <p>
+                    Technology and phone accessories
+                    company based in Kano, Nigeria.
+                </p>
+
+            </div>
+
+
+            <div>
+
+                <h3>
+                    Quick Links
+                </h3>
+
+                <a href="index.html">
+                    Home
+                </a>
+
+                <a href="about.html">
+                    About
+                </a>
+
+                <a href="ceo.html">
+                    CEO
+                </a>
+
+                <a href="products.html">
+                    Products
+                </a>
+
+                <a href="contact.html">
+                    Contact
+                </a>
+
+            </div>
+
+
+            <div>
+
+                <h3>
+                    Contact
+                </h3>
+
+                <p>
+                    📍 Bata Market, Kano State
+                </p>
+
+                <p>
+                    📞 08136080000
+                </p>
+
+                <p>
+                    💬 WhatsApp: 08136080000
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="copyright">
+
+            © <span id="year"></span>
+            AMG Global Technology Nig. Ltd.
+            All Rights Reserved.
+
+        </div>
+
+    </footer>
+
+
+    <script>
+
+        function toggleMenu() {
+
+            document
+                .getElementById("mainNav")
+                .classList.toggle("show");
+
+        }
+
+
+        function sendMessage(event) {
+
+            event.preventDefault();
+
+            const name =
+                document.getElementById("name").value;
+
+            const phone =
+                document.getElementById("phone").value;
+
+            const message =
+                document.getElementById("message").value;
+
+            const text =
+                "Hello AMG Global Technology.%0A%0A" +
+                "Name: " + encodeURIComponent(name) +
+                "%0APhone: " + encodeURIComponent(phone) +
+                "%0A%0AMessage:%0A" +
+                encodeURIComponent(message);
+
+            const whatsapp =
+                "https://wa.me/2348136080000?text=" + text;
+
+            window.open(whatsapp, "_blank");
+
+        }
+
+
+        document.getElementById("year").textContent =
+            new Date().getFullYear();
+
+    </script>
+
+</body>
+</html>
