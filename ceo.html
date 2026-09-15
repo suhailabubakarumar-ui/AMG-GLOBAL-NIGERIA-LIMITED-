@@ -1,837 +1,306 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <meta name="description"
-          content="Aminu Muhammad Gama - CEO of AMG Global Technology Nig. Ltd.">
-
-    <title>CEO - AMG Global Technology</title>
-
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        html {
-            scroll-behavior: smooth;
-        }
-
-        body {
-            font-family: Arial, Helvetica, sans-serif;
-            background: #f5f7fa;
-            color: #172033;
-            line-height: 1.6;
-        }
-
-        a {
-            text-decoration: none;
-        }
-
-        /* HEADER */
-
-        header {
-            background: #071b33;
-            color: white;
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-            box-shadow: 0 3px 15px rgba(0,0,0,0.15);
-        }
-
-        .navbar {
-            max-width: 1200px;
-            margin: auto;
-            min-height: 75px;
-            padding: 10px 20px;
-
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-        }
-
-        .brand {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            color: white;
-        }
-
-        .brand img {
-            width: 52px;
-            height: 52px;
-            object-fit: contain;
-            border-radius: 10px;
-            background: white;
-        }
-
-        .brand-text h2 {
-            font-size: 18px;
-            line-height: 1.2;
-        }
-
-        .brand-text p {
-            font-size: 11px;
-            color: #ff9d00;
-        }
-
-        nav {
-            display: flex;
-            gap: 6px;
-        }
-
-        nav a {
-            color: white;
-            padding: 10px 12px;
-            border-radius: 7px;
-            font-size: 14px;
-            font-weight: bold;
-        }
-
-        nav a:hover,
-        nav a.active {
-            background: #ff8a00;
-        }
-
-        .menu-btn {
-            display: none;
-            background: none;
-            border: none;
-            color: white;
-            font-size: 30px;
-            cursor: pointer;
-        }
-
-        /* HERO */
-
-        .hero {
-            background:
-                linear-gradient(
-                    rgba(7,27,51,0.90),
-                    rgba(7,27,51,0.90)
-                ),
-                url("logo.jpg");
-
-            background-size: cover;
-            background-position: center;
-
-            color: white;
-            text-align: center;
-            padding: 80px 20px;
-        }
-
-        .hero h1 {
-            font-size: 48px;
-            margin-bottom: 12px;
-        }
-
-        .hero h1 span {
-            color: #ff9200;
-        }
-
-        .hero p {
-            color: #dce3eb;
-            font-size: 18px;
-        }
-
-        /* CEO SECTION */
-
-        .ceo-section {
-            padding: 70px 20px;
-        }
-
-        .container {
-            max-width: 1100px;
-            margin: auto;
-        }
-
-        .ceo-card {
-            background: white;
-            border-radius: 22px;
-            overflow: hidden;
-
-            display: grid;
-            grid-template-columns: 420px 1fr;
-
-            box-shadow: 0 12px 40px rgba(0,0,0,0.10);
-        }
-
-        .ceo-photo {
-            background: #071b33;
-            min-height: 550px;
-        }
-
-        .ceo-photo img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            display: block;
-        }
-
-        .ceo-content {
-            padding: 50px;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-        }
-
-        .position {
-            color: #ff8a00;
-            font-size: 14px;
-            font-weight: bold;
-            text-transform: uppercase;
-            letter-spacing: 1.5px;
-            margin-bottom: 8px;
-        }
-
-        .ceo-content h2 {
-            color: #071b33;
-            font-size: 38px;
-            margin-bottom: 18px;
-        }
-
-        .ceo-content p {
-            color: #5d6877;
-            margin-bottom: 18px;
-            font-size: 16px;
-        }
-
-        .ceo-info {
-            margin-top: 10px;
-            padding: 20px;
-            background: #f5f7fa;
-            border-left: 4px solid #ff8a00;
-            border-radius: 8px;
-        }
-
-        .ceo-info p {
-            margin-bottom: 8px;
-            font-size: 15px;
-        }
-
-        .btn {
-            display: inline-block;
-            padding: 13px 22px;
-            border-radius: 8px;
-            font-weight: bold;
-            background: #ff8a00;
-            color: white;
-            margin-top: 15px;
-            text-align: center;
-        }
-
-        .btn:hover {
-            background: #e87500;
-        }
-
-        /* LEADERSHIP */
-
-        .leadership {
-            background: white;
-            padding: 70px 20px;
-        }
-
-        .section-title {
-            text-align: center;
-            margin-bottom: 40px;
-        }
-
-        .section-title h2 {
-            color: #071b33;
-            font-size: 34px;
-            margin-bottom: 10px;
-        }
-
-        .section-title p {
-            color: #697382;
-        }
-
-        .values {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 22px;
-        }
-
-        .value-card {
-            background: #f8fafc;
-            border: 1px solid #e5e9ee;
-            border-radius: 15px;
-            padding: 30px 22px;
-            text-align: center;
-        }
-
-        .value-icon {
-            font-size: 42px;
-            margin-bottom: 12px;
-        }
-
-        .value-card h3 {
-            color: #071b33;
-            margin-bottom: 10px;
-        }
-
-        .value-card p {
-            color: #657080;
-            font-size: 14px;
-        }
-
-        /* CTA */
-
-        .cta {
-            background: #071b33;
-            color: white;
-            text-align: center;
-            padding: 70px 20px;
-        }
-
-        .cta h2 {
-            font-size: 32px;
-            margin-bottom: 12px;
-        }
-
-        .cta p {
-            color: #d6dee8;
-            margin-bottom: 15px;
-        }
-
-        /* FOOTER */
-
-        footer {
-            background: #041222;
-            color: white;
-            padding: 40px 20px 20px;
-        }
-
-        .footer-grid {
-            max-width: 1100px;
-            margin: auto;
-
-            display: grid;
-            grid-template-columns: 1.2fr 1fr 1fr;
-            gap: 35px;
-        }
-
-        .footer-logo {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            margin-bottom: 15px;
-        }
-
-        .footer-logo img {
-            width: 50px;
-            height: 50px;
-            object-fit: contain;
-            background: white;
-            border-radius: 8px;
-        }
-
-        footer h3 {
-            color: #ff9200;
-            margin-bottom: 15px;
-        }
-
-        footer p,
-        footer a {
-            color: #c6ced8;
-            font-size: 14px;
-        }
-
-        footer a {
-            display: block;
-            margin-bottom: 8px;
-        }
-
-        footer a:hover {
-            color: #ff9200;
-        }
-
-        .copyright {
-            max-width: 1100px;
-            margin: 30px auto 0;
-            padding-top: 20px;
-            border-top: 1px solid rgba(255,255,255,0.1);
-            text-align: center;
-            color: #9ca8b7;
-            font-size: 13px;
-        }
-
-        /* MOBILE */
-
-        @media (max-width: 850px) {
-
-            .menu-btn {
-                display: block;
-            }
-
-            nav {
-                display: none;
-                position: absolute;
-                top: 75px;
-                left: 0;
-                width: 100%;
-                background: #071b33;
-                flex-direction: column;
-                padding: 10px 20px 20px;
-            }
-
-            nav.show {
-                display: flex;
-            }
-
-            nav a {
-                text-align: center;
-                padding: 13px;
-            }
-
-            .ceo-card {
-                grid-template-columns: 1fr;
-            }
-
-            .ceo-photo {
-                min-height: 450px;
-                height: 450px;
-            }
-
-            .values {
-                grid-template-columns: 1fr;
-            }
-
-            .footer-grid {
-                grid-template-columns: 1fr;
-            }
-        }
-
-        @media (max-width: 500px) {
-
-            .hero h1 {
-                font-size: 36px;
-            }
-
-            .hero p {
-                font-size: 16px;
-            }
-
-            .ceo-content {
-                padding: 30px 22px;
-            }
-
-            .ceo-content h2 {
-                font-size: 30px;
-            }
-
-            .ceo-photo {
-                min-height: 380px;
-                height: 380px;
-            }
-        }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>CEO | AMG Global Technology Nig. Ltd.</title>
+<meta name="description" content="Meet Aminu Muhammad Gama, CEO of AMG Global Technology Nig. Ltd.">
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+
+body{
+font-family:Arial,sans-serif;
+background:#f5f7fa;
+color:#222;
+line-height:1.7
+}
+
+header{
+background:#071b33;
+color:white;
+padding:15px 6%;
+display:flex;
+align-items:center;
+justify-content:space-between;
+position:sticky;
+top:0;
+z-index:1000
+}
+
+.brand{display:flex;align-items:center;gap:10px}
+
+.brand img{
+width:48px;
+height:48px;
+object-fit:contain;
+border-radius:8px;
+background:white
+}
+
+.brand h2{font-size:18px}
+
+nav{display:flex;gap:22px}
+
+nav a{
+color:white;
+text-decoration:none;
+font-weight:bold
+}
+
+nav a:hover,nav a.active{color:#ff8a00}
+
+.menu-btn{
+display:none;
+font-size:28px;
+cursor:pointer
+}
+
+.hero{
+background:linear-gradient(rgba(7,27,51,.9),rgba(7,27,51,.9)),url("logo.jpg") center/cover;
+color:white;
+text-align:center;
+padding:80px 20px
+}
+
+.hero h1{font-size:42px;margin-bottom:12px}
+
+.container{
+width:90%;
+max-width:1050px;
+margin:auto
+}
+
+.section{padding:55px 0}
+
+.ceo-card{
+background:white;
+border-radius:18px;
+box-shadow:0 6px 20px rgba(0,0,0,.09);
+overflow:hidden;
+display:grid;
+grid-template-columns:380px 1fr
+}
+
+.ceo-photo{
+background:#071b33;
+display:flex;
+align-items:center;
+justify-content:center;
+padding:25px
+}
+
+.ceo-photo img{
+width:100%;
+max-width:330px;
+height:390px;
+object-fit:cover;
+border-radius:15px
+}
+
+.ceo-info{
+padding:40px
+}
+
+.ceo-info h2{
+font-size:30px;
+color:#071b33
+}
+
+.ceo-info h2 span{color:#ff8a00}
+
+.position{
+color:#ff8a00;
+font-weight:bold;
+font-size:18px;
+margin:5px 0 20px
+}
+
+.quote{
+background:#f5f7fa;
+border-left:5px solid #ff8a00;
+padding:20px;
+margin-top:25px;
+font-style:italic
+}
+
+.btn{
+display:inline-block;
+background:#ff8a00;
+color:white;
+padding:11px 20px;
+border-radius:7px;
+text-decoration:none;
+font-weight:bold;
+margin-top:20px
+}
+
+.btn:hover{background:#e67600}
+
+footer{
+background:#071b33;
+color:white;
+text-align:center;
+padding:30px 15px;
+margin-top:45px
+}
+
+.designer{
+margin-top:12px;
+font-size:14px;
+color:#ccc
+}
+
+.whatsapp-float{
+position:fixed;
+width:58px;
+height:58px;
+bottom:22px;
+right:22px;
+background:#25D366;
+color:white;
+border-radius:50%;
+display:flex;
+align-items:center;
+justify-content:center;
+text-decoration:none;
+font-size:30px;
+box-shadow:0 5px 18px rgba(0,0,0,.25);
+z-index:9999;
+transition:.3s
+}
+
+.whatsapp-float:hover{transform:scale(1.1)}
+
+@media(max-width:750px){
+.ceo-card{grid-template-columns:1fr}
+
+.ceo-photo img{
+height:350px;
+max-width:300px
+}
+}
+
+@media(max-width:650px){
+nav{
+display:none;
+position:absolute;
+top:78px;
+left:0;
+width:100%;
+background:#071b33;
+flex-direction:column;
+padding:20px;
+gap:18px
+}
+
+nav.show{display:flex}
+
+.menu-btn{display:block}
+
+.hero h1{font-size:30px}
+
+.ceo-info{padding:25px}
+
+.whatsapp-float{
+width:54px;
+height:54px;
+bottom:16px;
+right:16px;
+font-size:28px
+}
+}
+</style>
 </head>
 
 <body>
 
-    <!-- HEADER -->
-
-    <header>
-
-        <div class="navbar">
-
-            <a href="index.html" class="brand">
-
-                <img src="logo.jpg"
-                     alt="AMG Global Technology Logo">
-
-                <div class="brand-text">
-                    <h2>AMG GLOBAL</h2>
-                    <p>TECHNOLOGY NIG. LTD.</p>
-                </div>
-
-            </a>
-
-            <button class="menu-btn"
-                    onclick="toggleMenu()"
-                    aria-label="Menu">
-                ☰
-            </button>
-
-            <nav id="mainNav">
-
-                <a href="index.html">
-                    Home
-                </a>
-
-                <a href="about.html">
-                    About
-                </a>
-
-                <a href="ceo.html"
-                   class="active">
-                    CEO
-                </a>
-
-                <a href="products.html">
-                    Products
-                </a>
-
-                <a href="contact.html">
-                    Contact
-                </a>
-
-            </nav>
-
-        </div>
-
-    </header>
-
-
-    <!-- PAGE HERO -->
-
-    <section class="hero">
-
-        <h1>
-            Our <span>CEO</span>
-        </h1>
-
-        <p>
-            Leadership behind AMG Global Technology Nig. Ltd.
-        </p>
-
-    </section>
-
-
-    <!-- CEO PROFILE -->
-
-    <section class="ceo-section">
-
-        <div class="container">
-
-            <div class="ceo-card">
-
-                <!-- CEO IMAGE -->
-
-                <div class="ceo-photo">
-
-                    <img src="ceo.jpg"
-                         alt="Aminu Muhammad Gama - CEO of AMG Global Technology">
-
-                </div>
-
-
-                <!-- CEO INFORMATION -->
-
-                <div class="ceo-content">
-
-                    <div class="position">
-                        Chief Executive Officer
-                    </div>
-
-                    <h2>
-                        Aminu Muhammad Gama
-                    </h2>
-
-                    <p>
-                        Aminu Muhammad Gama is the Chief Executive
-                        Officer of AMG Global Technology Nig. Ltd.,
-                        a technology and phone accessories company
-                        based in Kano State, Nigeria.
-                    </p>
-
-                    <p>
-                        Under his leadership, AMG Global Technology
-                        focuses on providing mobile phone accessories
-                        and technology products to customers.
-                    </p>
-
-                    <div class="ceo-info">
-
-                        <p>
-                            <strong>Company:</strong>
-                            AMG Global Technology Nig. Ltd.
-                        </p>
-
-                        <p>
-                            <strong>Position:</strong>
-                            Chief Executive Officer
-                        </p>
-
-                        <p>
-                            <strong>Location:</strong>
-                            Kano State, Nigeria
-                        </p>
-
-                        <p>
-                            <strong>Main Branch:</strong>
-                            Bata Market, Kano
-                        </p>
-
-                    </div>
-
-                    <a href="https://wa.me/2348136080000"
-                       target="_blank"
-                       class="btn">
-
-                        Contact AMG Global on WhatsApp
-
-                    </a>
-
-                </div>
-
-            </div>
-
-        </div>
-
-    </section>
-
-
-    <!-- LEADERSHIP VALUES -->
-
-    <section class="leadership">
-
-        <div class="container">
-
-            <div class="section-title">
-
-                <h2>
-                    Leadership & Values
-                </h2>
-
-                <p>
-                    Principles that support the growth of AMG Global.
-                </p>
-
-            </div>
-
-
-            <div class="values">
-
-                <div class="value-card">
-
-                    <div class="value-icon">
-                        🎯
-                    </div>
-
-                    <h3>
-                        Vision
-                    </h3>
-
-                    <p>
-                        Building a trusted technology accessories
-                        business serving customers in Nigeria
-                        and beyond.
-                    </p>
-
-                </div>
-
-
-                <div class="value-card">
-
-                    <div class="value-icon">
-                        ⭐
-                    </div>
-
-                    <h3>
-                        Quality
-                    </h3>
-
-                    <p>
-                        Providing useful and quality mobile
-                        accessories for customers.
-                    </p>
-
-                </div>
-
-
-                <div class="value-card">
-
-                    <div class="value-icon">
-                        🤝
-                    </div>
-
-                    <h3>
-                        Customer Focus
-                    </h3>
-
-                    <p>
-                        Respecting customers and working toward
-                        excellent customer service.
-                    </p>
-
-                </div>
-
-            </div>
-
-        </div>
-
-    </section>
-
-
-    <!-- CTA -->
-
-    <section class="cta">
-
-        <div class="container">
-
-            <h2>
-                Discover Our Products
-            </h2>
-
-            <p>
-                Explore the phone accessories available
-                from AMG Global Technology.
-            </p>
-
-            <a href="products.html"
-               class="btn">
-
-                View Products
-
-            </a>
-
-            <a href="contact.html"
-               class="btn">
-
-                Contact Us
-
-            </a>
-
-        </div>
-
-    </section>
-
-
-    <!-- FOOTER -->
-
-    <footer>
-
-        <div class="footer-grid">
-
-            <div>
-
-                <div class="footer-logo">
-
-                    <img src="logo.jpg"
-                         alt="AMG Global Logo">
-
-                    <div>
-
-                        <strong>
-                            AMG GLOBAL
-                        </strong>
-
-                        <br>
-
-                        <small>
-                            TECHNOLOGY NIG. LTD.
-                        </small>
-
-                    </div>
-
-                </div>
-
-                <p>
-                    Technology and phone accessories
-                    company based in Kano, Nigeria.
-                </p>
-
-            </div>
-
-
-            <div>
-
-                <h3>
-                    Quick Links
-                </h3>
-
-                <a href="index.html">
-                    Home
-                </a>
-
-                <a href="about.html">
-                    About
-                </a>
-
-                <a href="ceo.html">
-                    CEO
-                </a>
-
-                <a href="products.html">
-                    Products
-                </a>
-
-                <a href="contact.html">
-                    Contact
-                </a>
-
-            </div>
-
-
-            <div>
-
-                <h3>
-                    Contact
-                </h3>
-
-                <p>
-                    📍 Bata Market, Kano State
-                </p>
-
-                <p>
-                    📞 08136080000
-                </p>
-
-                <p>
-                    💬 WhatsApp: 08136080000
-                </p>
-
-            </div>
-
-        </div>
-
-
-        <div class="copyright">
-
-            © <span id="year"></span>
-            AMG Global Technology Nig. Ltd.
-            All Rights Reserved.
-
-        </div>
-
-    </footer>
-
-
-    <!-- JAVASCRIPT -->
-
-    <script>
-
-        function toggleMenu() {
-
-            document
-                .getElementById("mainNav")
-                .classList.toggle("show");
-
-        }
-
-        document
-            .querySelectorAll("#mainNav a")
-            .forEach(function(link) {
-
-                link.addEventListener("click", function() {
-
-                    document
-                        .getElementById("mainNav")
-                        .classList.remove("show");
-
-                });
-
-            });
-
-        document.getElementById("year").textContent =
-            new Date().getFullYear();
-
-    </script>
+<header>
+<div class="brand">
+<img src="logo.jpg" alt="AMG Global Technology Logo">
+<h2>AMG Global Technology</h2>
+</div>
+
+<div class="menu-btn" onclick="toggleMenu()">☰</div>
+
+<nav id="navMenu">
+<a href="index.html">Home</a>
+<a href="about.html">About</a>
+<a href="ceo.html" class="active">CEO</a>
+<a href="products.html">Products</a>
+<a href="contact.html">Contact</a>
+</nav>
+</header>
+
+<section class="hero">
+<h1>Our CEO</h1>
+<p>Leadership behind AMG Global Technology Nig. Ltd.</p>
+</section>
+
+<section class="section">
+<div class="container">
+
+<div class="ceo-card">
+
+<div class="ceo-photo">
+<img src="ceo.jpg" alt="Aminu Muhammad Gama - CEO">
+</div>
+
+<div class="ceo-info">
+<h2>Aminu Muhammad <span>Gama</span></h2>
+
+<div class="position">
+Chief Executive Officer — AMG Global Technology Nig. Ltd.
+</div>
+
+<p>
+Aminu Muhammad Gama is the Chief Executive Officer of AMG Global
+Technology Nig. Ltd., a technology and phone accessories company
+based in Kano State, Nigeria.
+</p>
+
+<p>
+His vision is to build a trusted technology business that provides
+quality products and excellent customer service while embracing
+modern technology.
+</p>
+
+<div class="quote">
+“Building trust through quality products, good service and innovation.”
+</div>
+
+<a class="btn" href="contact.html">Contact AMG Global</a>
+
+</div>
+</div>
+
+</div>
+</section>
+
+<a class="whatsapp-float"
+href="https://wa.me/2348136080000"
+target="_blank"
+rel="noopener"
+aria-label="Chat with AMG Global Technology on WhatsApp">💬</a>
+
+<footer>
+<p>© <span id="year"></span> AMG Global Technology Nig. Ltd.</p>
+<p>Bata Market, Kano State, Nigeria</p>
+
+<p class="designer">
+Designed by Suhail Abubakar Gama<br>
+09135855029
+</p>
+</footer>
+
+<script>
+function toggleMenu(){
+document.getElementById("navMenu").classList.toggle("show");
+}
+
+document.getElementById("year").textContent=new Date().getFullYear();
+</script>
 
 </body>
 </html>
