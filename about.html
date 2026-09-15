@@ -1,0 +1,778 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="description"
+          content="About AMG Global Technology Nig. Ltd. - Phone Accessories and Technology Company in Kano, Nigeria.">
+
+    <title>About Us - AMG Global Technology</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: #f5f7fa;
+            color: #172033;
+            line-height: 1.6;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        /* HEADER */
+
+        header {
+            background: #071b33;
+            color: white;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 3px 15px rgba(0,0,0,0.15);
+        }
+
+        .navbar {
+            max-width: 1200px;
+            margin: auto;
+            min-height: 75px;
+            padding: 10px 20px;
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .brand {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            color: white;
+        }
+
+        .brand img {
+            width: 52px;
+            height: 52px;
+            object-fit: contain;
+            border-radius: 10px;
+            background: white;
+        }
+
+        .brand-text h2 {
+            font-size: 18px;
+            line-height: 1.2;
+        }
+
+        .brand-text p {
+            font-size: 11px;
+            color: #ff9d00;
+        }
+
+        nav {
+            display: flex;
+            gap: 6px;
+        }
+
+        nav a {
+            color: white;
+            padding: 10px 12px;
+            border-radius: 7px;
+            font-size: 14px;
+            font-weight: bold;
+        }
+
+        nav a:hover,
+        nav a.active {
+            background: #ff8a00;
+        }
+
+        .menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            color: white;
+            font-size: 30px;
+        }
+
+        /* PAGE HERO */
+
+        .page-hero {
+            background:
+                linear-gradient(
+                    rgba(7,27,51,0.9),
+                    rgba(7,27,51,0.9)
+                ),
+                url("logo.jpg");
+
+            background-size: cover;
+            background-position: center;
+
+            color: white;
+            text-align: center;
+            padding: 90px 20px;
+        }
+
+        .page-hero h1 {
+            font-size: 48px;
+            margin-bottom: 15px;
+        }
+
+        .page-hero h1 span {
+            color: #ff9200;
+        }
+
+        .page-hero p {
+            color: #dce3eb;
+            font-size: 18px;
+        }
+
+        /* MAIN */
+
+        section {
+            padding: 70px 20px;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: auto;
+        }
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 45px;
+            align-items: center;
+        }
+
+        .about-text h2 {
+            color: #071b33;
+            font-size: 32px;
+            margin-bottom: 18px;
+        }
+
+        .about-text p {
+            color: #5d6877;
+            margin-bottom: 18px;
+        }
+
+        .info-box {
+            background: #071b33;
+            color: white;
+            padding: 35px;
+            border-radius: 18px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.12);
+        }
+
+        .info-box img {
+            width: 130px;
+            height: 130px;
+            object-fit: contain;
+            background: white;
+            border-radius: 15px;
+            padding: 10px;
+            margin-bottom: 20px;
+        }
+
+        .info-box h3 {
+            color: #ff9200;
+            font-size: 25px;
+            margin-bottom: 15px;
+        }
+
+        .info-box p {
+            color: #dce3eb;
+            margin-bottom: 10px;
+        }
+
+        /* MISSION */
+
+        .mission {
+            background: white;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .section-title h2 {
+            color: #071b33;
+            font-size: 34px;
+        }
+
+        .section-title p {
+            color: #697382;
+        }
+
+        .cards {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 22px;
+        }
+
+        .card {
+            background: #f8fafc;
+            padding: 30px 22px;
+            border-radius: 15px;
+            border: 1px solid #e5e9ee;
+            text-align: center;
+        }
+
+        .card-icon {
+            font-size: 42px;
+            margin-bottom: 15px;
+        }
+
+        .card h3 {
+            color: #071b33;
+            margin-bottom: 10px;
+        }
+
+        .card p {
+            color: #657080;
+            font-size: 14px;
+        }
+
+        /* CTA */
+
+        .cta {
+            background: #071b33;
+            color: white;
+            text-align: center;
+        }
+
+        .cta h2 {
+            font-size: 32px;
+            margin-bottom: 15px;
+        }
+
+        .cta p {
+            color: #d6dee8;
+            margin-bottom: 25px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 13px 22px;
+            border-radius: 8px;
+            font-weight: bold;
+            background: #ff8a00;
+            color: white;
+            margin: 5px;
+        }
+
+        .btn:hover {
+            background: #e87500;
+        }
+
+        /* FOOTER */
+
+        footer {
+            background: #041222;
+            color: white;
+            padding: 40px 20px 20px;
+        }
+
+        .footer-grid {
+            max-width: 1100px;
+            margin: auto;
+
+            display: grid;
+            grid-template-columns: 1.2fr 1fr 1fr;
+            gap: 35px;
+        }
+
+        .footer-logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 15px;
+        }
+
+        .footer-logo img {
+            width: 50px;
+            height: 50px;
+            object-fit: contain;
+            background: white;
+            border-radius: 8px;
+        }
+
+        footer h3 {
+            color: #ff9200;
+            margin-bottom: 15px;
+        }
+
+        footer p,
+        footer a {
+            color: #c6ced8;
+            font-size: 14px;
+        }
+
+        footer a {
+            display: block;
+            margin-bottom: 8px;
+        }
+
+        .copyright {
+            max-width: 1100px;
+            margin: 30px auto 0;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            text-align: center;
+            color: #9ca8b7;
+            font-size: 13px;
+        }
+
+        /* MOBILE */
+
+        @media (max-width: 800px) {
+
+            .menu-btn {
+                display: block;
+                cursor: pointer;
+            }
+
+            nav {
+                display: none;
+                position: absolute;
+                top: 75px;
+                left: 0;
+                width: 100%;
+                background: #071b33;
+                flex-direction: column;
+                padding: 10px 20px 20px;
+            }
+
+            nav.show {
+                display: flex;
+            }
+
+            nav a {
+                text-align: center;
+                padding: 13px;
+            }
+
+            .about-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .cards {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .page-hero h1 {
+                font-size: 36px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- HEADER -->
+
+    <header>
+
+        <div class="navbar">
+
+            <a href="index.html" class="brand">
+
+                <img src="logo.jpg"
+                     alt="AMG Global Technology Logo">
+
+                <div class="brand-text">
+                    <h2>AMG GLOBAL</h2>
+                    <p>TECHNOLOGY NIG. LTD.</p>
+                </div>
+
+            </a>
+
+            <button class="menu-btn"
+                    onclick="toggleMenu()">
+                ☰
+            </button>
+
+            <nav id="mainNav">
+
+                <a href="index.html">
+                    Home
+                </a>
+
+                <a href="about.html"
+                   class="active">
+                    About
+                </a>
+
+                <a href="ceo.html">
+                    CEO
+                </a>
+
+                <a href="products.html">
+                    Products
+                </a>
+
+                <a href="contact.html">
+                    Contact
+                </a>
+
+            </nav>
+
+        </div>
+
+    </header>
+
+
+    <!-- PAGE HERO -->
+
+    <section class="page-hero">
+
+        <h1>
+            About <span>AMG Global</span>
+        </h1>
+
+        <p>
+            Technology, Mobile Accessories and Customer Service
+        </p>
+
+    </section>
+
+
+    <!-- ABOUT COMPANY -->
+
+    <section>
+
+        <div class="container">
+
+            <div class="about-grid">
+
+                <div class="about-text">
+
+                    <h2>
+                        About AMG Global Technology Nig. Ltd.
+                    </h2>
+
+                    <p>
+                        AMG Global Technology Nig. Ltd. is a
+                        technology and mobile phone accessories
+                        company based in Kano State, Nigeria.
+                    </p>
+
+                    <p>
+                        The company focuses on providing mobile
+                        accessories and technology products to
+                        customers while maintaining good customer
+                        service.
+                    </p>
+
+                    <p>
+                        Our product category includes phone
+                        chargers, power banks, Bluetooth devices,
+                        charging cables and other mobile accessories.
+                    </p>
+
+                    <p>
+                        We are committed to building a trusted
+                        business that provides useful technology
+                        products to customers.
+                    </p>
+
+                </div>
+
+
+                <div class="info-box">
+
+                    <img src="logo.jpg"
+                         alt="AMG Global Logo">
+
+                    <h3>
+                        Company Information
+                    </h3>
+
+                    <p>
+                        <strong>Company:</strong><br>
+                        AMG Global Technology Nig. Ltd.
+                    </p>
+
+                    <p>
+                        <strong>CEO:</strong><br>
+                        Aminu Muhammad Gama
+                    </p>
+
+                    <p>
+                        <strong>Location:</strong><br>
+                        Bata Market, Kano State, Nigeria
+                    </p>
+
+                    <p>
+                        <strong>Phone:</strong><br>
+                        08136080000
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- MISSION / VISION -->
+
+    <section class="mission">
+
+        <div class="container">
+
+            <div class="section-title">
+
+                <h2>
+                    Our Mission & Values
+                </h2>
+
+                <p>
+                    What we stand for at AMG Global Technology.
+                </p>
+
+            </div>
+
+
+            <div class="cards">
+
+                <div class="card">
+
+                    <div class="card-icon">
+                        🎯
+                    </div>
+
+                    <h3>
+                        Our Mission
+                    </h3>
+
+                    <p>
+                        To provide useful and quality
+                        technology accessories while
+                        serving our customers professionally.
+                    </p>
+
+                </div>
+
+
+                <div class="card">
+
+                    <div class="card-icon">
+                        👁️
+                    </div>
+
+                    <h3>
+                        Our Vision
+                    </h3>
+
+                    <p>
+                        To build a trusted technology
+                        accessories business serving
+                        customers in Nigeria and beyond.
+                    </p>
+
+                </div>
+
+
+                <div class="card">
+
+                    <div class="card-icon">
+                        🤝
+                    </div>
+
+                    <h3>
+                        Our Values
+                    </h3>
+
+                    <p>
+                        Quality, customer satisfaction,
+                        reliability, professionalism and
+                        continuous improvement.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- CTA -->
+
+    <section class="cta">
+
+        <div class="container">
+
+            <h2>
+                Looking for Phone Accessories?
+            </h2>
+
+            <p>
+                Explore our products or contact AMG Global Technology.
+            </p>
+
+            <a href="products.html"
+               class="btn">
+                View Products
+            </a>
+
+            <a href="https://wa.me/2348136080000"
+               target="_blank"
+               class="btn">
+                WhatsApp Us
+            </a>
+
+        </div>
+
+    </section>
+
+
+    <!-- FOOTER -->
+
+    <footer>
+
+        <div class="footer-grid">
+
+            <div>
+
+                <div class="footer-logo">
+
+                    <img src="logo.jpg"
+                         alt="AMG Global Logo">
+
+                    <div>
+
+                        <strong>
+                            AMG GLOBAL
+                        </strong>
+
+                        <br>
+
+                        <small>
+                            TECHNOLOGY NIG. LTD.
+                        </small>
+
+                    </div>
+
+                </div>
+
+                <p>
+                    Technology and phone accessories
+                    company based in Kano, Nigeria.
+                </p>
+
+            </div>
+
+
+            <div>
+
+                <h3>
+                    Quick Links
+                </h3>
+
+                <a href="index.html">
+                    Home
+                </a>
+
+                <a href="about.html">
+                    About
+                </a>
+
+                <a href="ceo.html">
+                    CEO
+                </a>
+
+                <a href="products.html">
+                    Products
+                </a>
+
+                <a href="contact.html">
+                    Contact
+                </a>
+
+            </div>
+
+
+            <div>
+
+                <h3>
+                    Contact
+                </h3>
+
+                <p>
+                    📍 Bata Market, Kano State
+                </p>
+
+                <p>
+                    📞 08136080000
+                </p>
+
+                <p>
+                    💬 WhatsApp: 08136080000
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="copyright">
+
+            © <span id="year"></span>
+            AMG Global Technology Nig. Ltd.
+            All Rights Reserved.
+
+        </div>
+
+    </footer>
+
+
+    <script>
+
+        function toggleMenu() {
+
+            document
+                .getElementById("mainNav")
+                .classList.toggle("show");
+
+        }
+
+        document
+            .querySelectorAll("#mainNav a")
+            .forEach(function(link) {
+
+                link.addEventListener("click", function() {
+
+                    document
+                        .getElementById("mainNav")
+                        .classList.remove("show");
+
+                });
+
+            });
+
+        document.getElementById("year").textContent =
+            new Date().getFullYear();
+
+    </script>
+
+</body>
+</html>
