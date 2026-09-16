@@ -6,257 +6,443 @@
 
   <title>Products | AMG Global Technology Nig. Ltd.</title>
   <meta name="description" content="Explore phone accessories and technology products from AMG Global Technology Nig. Ltd.">
+  <meta name="author" content="Suhail Abubakar Gama">
 
   <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
     }
 
-    body {
-      font-family: Arial, sans-serif;
-      background: #f5f7fa;
-      color: #222;
-      line-height: 1.6;
+    html{
+      scroll-behavior:smooth;
     }
 
-    header {
-      background: #071b33;
-      color: white;
-      padding: 15px 6%;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      position: sticky;
-      top: 0;
-      z-index: 1000;
+    body{
+      font-family:Arial, Helvetica, sans-serif;
+      background:#f5f7fa;
+      color:#172033;
+      line-height:1.6;
     }
 
-    .brand {
-      display: flex;
-      align-items: center;
-      gap: 10px;
+    /* HEADER */
+    header{
+      background:#071b33;
+      color:white;
+      position:sticky;
+      top:0;
+      z-index:1000;
+      box-shadow:0 3px 15px rgba(0,0,0,.15);
     }
 
-    .brand img {
-      width: 48px;
-      height: 48px;
-      object-fit: contain;
-      border-radius: 8px;
-      background: white;
+    .navbar{
+      max-width:1200px;
+      margin:auto;
+      padding:12px 20px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
     }
 
-    .brand h2 {
-      font-size: 18px;
+    .brand{
+      display:flex;
+      align-items:center;
+      gap:10px;
+      text-decoration:none;
+      color:white;
     }
 
-    nav {
-      display: flex;
-      gap: 22px;
+    .brand img{
+      width:48px;
+      height:48px;
+      object-fit:cover;
+      border-radius:50%;
+      border:2px solid #ff8a00;
     }
 
-    nav a {
-      color: white;
-      text-decoration: none;
-      font-weight: bold;
+    .brand-text{
+      font-size:17px;
+      font-weight:bold;
+    }
+
+    .menu-btn{
+      display:none;
+      font-size:28px;
+      cursor:pointer;
+      color:white;
+      background:none;
+      border:none;
+    }
+
+    nav ul{
+      list-style:none;
+      display:flex;
+      gap:25px;
+    }
+
+    nav a{
+      color:white;
+      text-decoration:none;
+      font-size:15px;
+      font-weight:600;
+      transition:.3s;
     }
 
     nav a:hover,
-    nav a.active {
-      color: #ff8a00;
+    nav a.active{
+      color:#ff8a00;
     }
 
-    .menu-btn {
-      display: none;
-      font-size: 28px;
-      cursor: pointer;
+    /* HERO */
+    .hero{
+      background:
+        linear-gradient(rgba(7,27,51,.86),rgba(7,27,51,.86)),
+        url("logo.jpg") center/cover;
+      min-height:330px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      text-align:center;
+      padding:50px 20px;
+      color:white;
     }
 
-    .hero {
-      background: linear-gradient(
-        rgba(7,27,51,0.9),
-        rgba(7,27,51,0.9)
-      ),
-      url("logo.jpg") center/cover;
-
-      color: white;
-      text-align: center;
-      padding: 80px 20px;
+    .hero-content{
+      max-width:800px;
     }
 
-    .hero h1 {
-      font-size: 42px;
-      margin-bottom: 12px;
+    .hero h1{
+      font-size:45px;
+      margin-bottom:12px;
     }
 
-    .hero p {
-      max-width: 700px;
-      margin: auto;
-      font-size: 18px;
+    .hero h1 span{
+      color:#ff8a00;
     }
 
-    .container {
-      width: 90%;
-      max-width: 1150px;
-      margin: auto;
+    .hero p{
+      font-size:18px;
+      opacity:.95;
     }
 
-    .section {
-      padding: 55px 0;
+    /* PRODUCTS */
+    .products-section{
+      max-width:1200px;
+      margin:auto;
+      padding:70px 20px;
     }
 
-    .section-title {
-      text-align: center;
-      color: #071b33;
-      font-size: 32px;
-      margin-bottom: 10px;
+    .section-title{
+      text-align:center;
+      margin-bottom:45px;
     }
 
-    .section-subtitle {
-      text-align: center;
-      color: #666;
-      margin-bottom: 35px;
+    .section-title h2{
+      font-size:34px;
+      color:#071b33;
+      margin-bottom:10px;
     }
 
-    .products {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 22px;
+    .section-title h2 span{
+      color:#ff8a00;
     }
 
-    .product-card {
-      background: white;
-      border-radius: 14px;
-      overflow: hidden;
-      box-shadow: 0 5px 18px rgba(0,0,0,0.08);
-      transition: 0.3s;
+    .section-title p{
+      color:#667085;
+      max-width:650px;
+      margin:auto;
     }
 
-    .product-card:hover {
-      transform: translateY(-5px);
+    .products-grid{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:28px;
     }
 
-    .product-image {
-      height: 190px;
-      background: #eef2f6;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: #777;
-      font-size: 16px;
-      text-align: center;
-      padding: 15px;
+    .product-card{
+      background:white;
+      border-radius:16px;
+      overflow:hidden;
+      box-shadow:0 8px 25px rgba(0,0,0,.08);
+      transition:.3s;
+      border:1px solid #e8ecf1;
     }
 
-    .product-image img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
+    .product-card:hover{
+      transform:translateY(-7px);
+      box-shadow:0 14px 32px rgba(0,0,0,.14);
     }
 
-    .product-info {
-      padding: 20px;
+    .product-image{
+      width:100%;
+      height:270px;
+      background:#eef2f6;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      overflow:hidden;
     }
 
-    .product-info h3 {
-      color: #071b33;
-      margin-bottom: 8px;
+    .product-image img{
+      width:100%;
+      height:100%;
+      object-fit:contain;
+      display:block;
     }
 
-    .product-info p {
-      color: #666;
-      font-size: 14px;
-      margin-bottom: 15px;
+    .product-info{
+      padding:24px;
     }
 
-    .price {
-      color: #ff8a00;
-      font-size: 20px;
-      font-weight: bold;
-      margin-bottom: 15px;
+    .product-info h3{
+      color:#071b33;
+      font-size:22px;
+      margin-bottom:8px;
     }
 
-    .btn {
-      display: inline-block;
-      background: #ff8a00;
-      color: white;
-      padding: 10px 16px;
-      border-radius: 7px;
-      text-decoration: none;
-      font-weight: bold;
+    .product-description{
+      color:#667085;
+      font-size:14px;
+      margin-bottom:15px;
     }
 
-    .btn:hover {
-      background: #e67600;
+    .price{
+      font-size:22px;
+      font-weight:bold;
+      color:#ff8a00;
+      margin-bottom:18px;
     }
 
-    .info-box {
-      background: #071b33;
-      color: white;
-      padding: 35px;
-      border-radius: 14px;
-      text-align: center;
-      margin-top: 45px;
+    .order-btn{
+      display:block;
+      width:100%;
+      text-align:center;
+      background:#25D366;
+      color:white;
+      padding:13px 18px;
+      border-radius:8px;
+      text-decoration:none;
+      font-weight:bold;
+      transition:.3s;
     }
 
-    .info-box h2 {
-      color: #ff8a00;
-      margin-bottom: 10px;
+    .order-btn:hover{
+      background:#1ebe5d;
+      transform:translateY(-2px);
     }
 
-    footer {
-      background: #071b33;
-      color: white;
-      text-align: center;
-      padding: 30px 15px;
-      margin-top: 40px;
+    /* INFO BOX */
+    .info-box{
+      margin-top:60px;
+      background:#071b33;
+      color:white;
+      border-radius:16px;
+      padding:40px 25px;
+      text-align:center;
     }
 
-    footer a {
-      color: #ff8a00;
-      text-decoration: none;
+    .info-box h2{
+      color:#ff8a00;
+      margin-bottom:10px;
     }
 
-    .designer {
-      margin-top: 12px;
-      font-size: 14px;
-      color: #ccc;
+    .info-box p{
+      max-width:700px;
+      margin:0 auto 20px;
+      opacity:.9;
     }
 
-    @media (max-width: 900px) {
-      .products {
-        grid-template-columns: repeat(2, 1fr);
+    .contact-btn{
+      display:inline-block;
+      background:#ff8a00;
+      color:white;
+      text-decoration:none;
+      padding:13px 25px;
+      border-radius:8px;
+      font-weight:bold;
+      transition:.3s;
+    }
+
+    .contact-btn:hover{
+      background:#e97800;
+    }
+
+    /* FOOTER */
+    footer{
+      background:#041222;
+      color:#d7dee8;
+      margin-top:50px;
+      padding:45px 20px 20px;
+    }
+
+    .footer-container{
+      max-width:1200px;
+      margin:auto;
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:35px;
+    }
+
+    footer h3{
+      color:white;
+      margin-bottom:15px;
+    }
+
+    footer h3 span{
+      color:#ff8a00;
+    }
+
+    footer p{
+      font-size:14px;
+      margin-bottom:8px;
+    }
+
+    .footer-links{
+      list-style:none;
+    }
+
+    .footer-links li{
+      margin-bottom:8px;
+    }
+
+    .footer-links a{
+      color:#d7dee8;
+      text-decoration:none;
+      transition:.3s;
+    }
+
+    .footer-links a:hover{
+      color:#ff8a00;
+    }
+
+    .copyright{
+      max-width:1200px;
+      margin:35px auto 0;
+      padding-top:20px;
+      border-top:1px solid rgba(255,255,255,.12);
+      text-align:center;
+      font-size:13px;
+      color:#aab4c1;
+    }
+
+    .design-credit{
+      margin-top:8px;
+      color:#ff8a00;
+      font-weight:bold;
+    }
+
+    /* WHATSAPP FLOATING BUTTON */
+    .whatsapp-float{
+      position:fixed;
+      width:58px;
+      height:58px;
+      bottom:22px;
+      right:22px;
+      background:#25D366;
+      color:white;
+      border-radius:50%;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      text-decoration:none;
+      font-size:30px;
+      box-shadow:0 5px 18px rgba(0,0,0,.25);
+      z-index:9999;
+      transition:.3s;
+    }
+
+    .whatsapp-float:hover{
+      transform:scale(1.1);
+    }
+
+    /* MOBILE */
+    @media(max-width:850px){
+
+      .menu-btn{
+        display:block;
+      }
+
+      nav{
+        display:none;
+        position:absolute;
+        top:72px;
+        left:0;
+        width:100%;
+        background:#071b33;
+        padding:20px;
+        box-shadow:0 8px 15px rgba(0,0,0,.2);
+      }
+
+      nav.show{
+        display:block;
+      }
+
+      nav ul{
+        flex-direction:column;
+        gap:18px;
+      }
+
+      .products-grid{
+        grid-template-columns:repeat(2,1fr);
+      }
+
+      .footer-container{
+        grid-template-columns:1fr 1fr;
       }
     }
 
-    @media (max-width: 650px) {
-      nav {
-        display: none;
-        position: absolute;
-        top: 78px;
-        left: 0;
-        width: 100%;
-        background: #071b33;
-        flex-direction: column;
-        padding: 20px;
-        gap: 18px;
+    @media(max-width:600px){
+
+      .brand-text{
+        font-size:14px;
       }
 
-      nav.show {
-        display: flex;
+      .brand img{
+        width:42px;
+        height:42px;
       }
 
-      .menu-btn {
-        display: block;
+      .hero{
+        min-height:280px;
       }
 
-      .hero h1 {
-        font-size: 30px;
+      .hero h1{
+        font-size:32px;
       }
 
-      .products {
-        grid-template-columns: 1fr;
+      .hero p{
+        font-size:15px;
+      }
+
+      .products-section{
+        padding:50px 15px;
+      }
+
+      .section-title h2{
+        font-size:28px;
+      }
+
+      .products-grid{
+        grid-template-columns:1fr;
+        gap:22px;
+      }
+
+      .product-image{
+        height:280px;
+      }
+
+      .footer-container{
+        grid-template-columns:1fr;
+        text-align:center;
+      }
+
+      .whatsapp-float{
+        width:54px;
+        height:54px;
+        bottom:16px;
+        right:16px;
+        font-size:28px;
       }
     }
   </style>
@@ -264,179 +450,265 @@
 
 <body>
 
-<header>
-  <div class="brand">
-    <img src="logo.jpg" alt="AMG Global Technology Logo">
-    <h2>AMG Global Technology</h2>
-  </div>
+  <!-- HEADER -->
+  <header>
+    <div class="navbar">
 
-  <div class="menu-btn" onclick="toggleMenu()">☰</div>
+      <a href="index.html" class="brand">
+        <img src="logo.jpg" alt="AMG Global Technology Logo">
+        <div class="brand-text">
+          AMG Global Technology
+        </div>
+      </a>
 
-  <nav id="navMenu">
-    <a href="index.html">Home</a>
-    <a href="about.html">About</a>
-    <a href="ceo.html">CEO</a>
-    <a href="products.html" class="active">Products</a>
-    <a href="contact.html">Contact</a>
-  </nav>
-</header>
+      <button class="menu-btn" onclick="toggleMenu()" aria-label="Open menu">
+        ☰
+      </button>
 
-<section class="hero">
-  <h1>Our Products</h1>
-  <p>
-    Quality phone accessories and technology products
-    from AMG Global Technology Nig. Ltd.
-  </p>
-</section>
+      <nav id="mainNav">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="ceo.html">CEO</a></li>
+          <li><a href="products.html" class="active">Products</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
 
-<section class="section">
-  <div class="container">
+    </div>
+  </header>
 
-    <h2 class="section-title">Featured Products</h2>
 
-    <p class="section-subtitle">
-      Explore some of the products available at AMG Global Technology.
-    </p>
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-content">
+      <h1>Our <span>Products</span></h1>
+      <p>
+        Quality phone accessories and technology products
+        from AMG Global Technology Nig. Ltd.
+      </p>
+    </div>
+  </section>
 
-    <div class="products">
 
+  <!-- PRODUCTS -->
+  <section class="products-section">
+
+    <div class="section-title">
+      <h2>Featured <span>Products</span></h2>
+      <p>
+        Browse some of our available technology products.
+        Contact us through WhatsApp to place your order.
+      </p>
+    </div>
+
+
+    <div class="products-grid">
+
+      <!-- CHARGER -->
       <div class="product-card">
+
         <div class="product-image">
-          Product Image
-        </div>
-
-        <div class="product-info">
-          <h3>Bluetooth Earbuds</h3>
-          <p>
-            Wireless Bluetooth earbuds suitable for music,
-            calls and everyday use.
-          </p>
-
-          <div class="price">Price: Contact Us</div>
-
-          <a class="btn"
-             href="https://wa.me/2348136080000">
-            Order Now
-          </a>
-        </div>
-      </div>
-
-
-      <div class="product-card">
-        <div class="product-image">
-          Product Image
-        </div>
-
-        <div class="product-info">
-          <h3>Power Bank</h3>
-          <p>
-            Portable power banks for charging your phone
-            while you are on the move.
-          </p>
-
-          <div class="price">Price: Contact Us</div>
-
-          <a class="btn"
-             href="https://wa.me/2348136080000">
-            Order Now
-          </a>
-        </div>
-      </div>
-
-
-      <div class="product-card">
-        <div class="product-image">
-          Product Image
+          <img
+            src="Charger.jpg"
+            alt="Fast Charger"
+            loading="lazy">
         </div>
 
         <div class="product-info">
           <h3>Fast Charger</h3>
-          <p>
-            Reliable phone chargers designed for convenient
-            and efficient charging.
+
+          <p class="product-description">
+            Reliable phone charger suitable for everyday charging.
           </p>
 
-          <div class="price">Price: Contact Us</div>
+          <div class="price">
+            ₦5,000
+          </div>
 
-          <a class="btn"
-             href="https://wa.me/2348136080000">
-            Order Now
+          <a
+            href="https://wa.me/2348136080000?text=Hello%20AMG%20Global%2C%20I%20want%20to%20order%20the%20Fast%20Charger%20for%20₦5%2C000."
+            class="order-btn"
+            target="_blank"
+            rel="noopener">
+            💬 Order Now
           </a>
         </div>
+
       </div>
 
 
+      <!-- POWER BANK -->
       <div class="product-card">
+
         <div class="product-image">
-          Product Image
+          <img
+            src="Power bank.png"
+            alt="Power Bank"
+            loading="lazy">
         </div>
 
         <div class="product-info">
-          <h3>Bluetooth Speaker</h3>
-          <p>
-            Portable Bluetooth speakers for enjoying music
-            at home or outdoors.
+          <h3>Power Bank</h3>
+
+          <p class="product-description">
+            Portable power solution for charging your devices on the go.
           </p>
 
-          <div class="price">Price: Contact Us</div>
+          <div class="price">
+            ₦15,000
+          </div>
 
-          <a class="btn"
-             href="https://wa.me/2348136080000">
-            Order Now
+          <a
+            href="https://wa.me/2348136080000?text=Hello%20AMG%20Global%2C%20I%20want%20to%20order%20the%20Power%20Bank%20for%20₦15%2C000."
+            class="order-btn"
+            target="_blank"
+            rel="noopener">
+            💬 Order Now
           </a>
         </div>
+
+      </div>
+
+
+      <!-- BLUETOOTH -->
+      <div class="product-card">
+
+        <div class="product-image">
+          <img
+            src="Bluetooth.png"
+            alt="Bluetooth Device"
+            loading="lazy">
+        </div>
+
+        <div class="product-info">
+          <h3>Bluetooth</h3>
+
+          <p class="product-description">
+            Quality Bluetooth accessory for convenient wireless use.
+          </p>
+
+          <div class="price">
+            ₦8,000
+          </div>
+
+          <a
+            href="https://wa.me/2348136080000?text=Hello%20AMG%20Global%2C%20I%20want%20to%20order%20the%20Bluetooth%20product%20for%20₦8%2C000."
+            class="order-btn"
+            target="_blank"
+            rel="noopener">
+            💬 Order Now
+          </a>
+        </div>
+
       </div>
 
     </div>
 
 
+    <!-- CONTACT BOX -->
     <div class="info-box">
+
       <h2>Need a Product?</h2>
 
       <p>
-        Contact AMG Global Technology Nig. Ltd.
-        for product availability, prices and orders.
+        Contact AMG Global Technology Nig. Ltd. for product
+        availability, more accessories and orders.
       </p>
 
-      <br>
-
-      <a class="btn"
-         href="https://wa.me/2348136080000">
-        Chat on WhatsApp
+      <a
+        href="contact.html"
+        class="contact-btn">
+        Contact Us
       </a>
+
     </div>
 
-  </div>
-</section>
+  </section>
 
-<footer>
 
-  <p>
-    © <span id="year"></span>
-    AMG Global Technology Nig. Ltd.
-  </p>
+  <!-- FOOTER -->
+  <footer>
 
-  <p>
-    Bata Market, Kano State, Nigeria
-  </p>
+    <div class="footer-container">
 
-  <p class="designer">
-    Designed by Suhail Abubakar Gama<br>
-    09135855029
-  </p>
+      <div>
+        <h3>AMG <span>Global Technology</span></h3>
 
-</footer>
+        <p>
+          AMG Global Technology Nig. Ltd.
+        </p>
 
-<script>
+        <p>
+          Quality technology products and phone accessories.
+        </p>
+      </div>
 
-function toggleMenu() {
-  document.getElementById("navMenu").classList.toggle("show");
-}
 
-document.getElementById("year").textContent =
-  new Date().getFullYear();
+      <div>
+        <h3>Quick Links</h3>
 
-</script>
+        <ul class="footer-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="ceo.html">CEO</a></li>
+          <li><a href="products.html">Products</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+
+
+      <div>
+        <h3>Contact</h3>
+
+        <p>📍 Bata Market, Kano State, Nigeria</p>
+
+        <p>📱 08136080000</p>
+
+        <p>💬 WhatsApp Available</p>
+      </div>
+
+    </div>
+
+
+    <div class="copyright">
+
+      © <span id="year"></span>
+      AMG Global Technology Nig. Ltd. All Rights Reserved.
+
+      <div class="design-credit">
+        Designed by Suhail Abubakar Gama
+        <br>
+        09135855029
+      </div>
+
+    </div>
+
+  </footer>
+
+
+  <!-- FLOATING WHATSAPP -->
+  <a
+    href="https://wa.me/2348136080000"
+    class="whatsapp-float"
+    target="_blank"
+    rel="noopener"
+    aria-label="Chat with AMG Global Technology on WhatsApp">
+    💬
+  </a>
+
+
+  <!-- JAVASCRIPT -->
+  <script>
+
+    function toggleMenu(){
+      document.getElementById("mainNav").classList.toggle("show");
+    }
+
+    document.getElementById("year").textContent =
+      new Date().getFullYear();
+
+  </script>
 
 </body>
 </html>
