@@ -5,444 +5,430 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <title>Products | AMG Global Technology Nig. Ltd.</title>
-  <meta name="description" content="Explore phone accessories and technology products from AMG Global Technology Nig. Ltd.">
-  <meta name="author" content="Suhail Abubakar Gama">
+  <meta name="description" content="AMG Global Technology Nig. Ltd. - Phone accessories and technology products.">
 
   <style>
-    *{
-      margin:0;
-      padding:0;
-      box-sizing:border-box;
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
     }
 
-    html{
-      scroll-behavior:smooth;
+    html {
+      scroll-behavior: smooth;
     }
 
-    body{
-      font-family:Arial, Helvetica, sans-serif;
-      background:#f5f7fa;
-      color:#172033;
-      line-height:1.6;
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background: #f5f7fa;
+      color: #172033;
+      line-height: 1.6;
     }
 
     /* HEADER */
-    header{
-      background:#071b33;
-      color:white;
-      position:sticky;
-      top:0;
-      z-index:1000;
-      box-shadow:0 3px 15px rgba(0,0,0,.15);
+    header {
+      background: #071b33;
+      color: white;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      box-shadow: 0 3px 15px rgba(0,0,0,.15);
     }
 
-    .navbar{
-      max-width:1200px;
-      margin:auto;
-      padding:12px 20px;
-      display:flex;
-      align-items:center;
-      justify-content:space-between;
+    .navbar {
+      max-width: 1200px;
+      margin: auto;
+      padding: 12px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
     }
 
-    .brand{
-      display:flex;
-      align-items:center;
-      gap:10px;
-      text-decoration:none;
-      color:white;
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      text-decoration: none;
+      color: white;
     }
 
-    .brand img{
-      width:48px;
-      height:48px;
-      object-fit:cover;
-      border-radius:50%;
-      border:2px solid #ff8a00;
+    .brand img {
+      width: 48px;
+      height: 48px;
+      object-fit: cover;
+      border-radius: 50%;
+      border: 2px solid #ff8a00;
     }
 
-    .brand-text{
-      font-size:17px;
-      font-weight:bold;
+    .brand-text {
+      font-size: 17px;
+      font-weight: bold;
     }
 
-    .menu-btn{
-      display:none;
-      font-size:28px;
-      cursor:pointer;
-      color:white;
-      background:none;
-      border:none;
+    .menu-btn {
+      display: none;
+      font-size: 28px;
+      cursor: pointer;
+      color: white;
+      background: none;
+      border: none;
     }
 
-    nav ul{
-      list-style:none;
-      display:flex;
-      gap:25px;
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 25px;
     }
 
-    nav a{
-      color:white;
-      text-decoration:none;
-      font-size:15px;
-      font-weight:600;
-      transition:.3s;
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-size: 15px;
+      font-weight: 600;
+      transition: .3s;
     }
 
     nav a:hover,
-    nav a.active{
-      color:#ff8a00;
+    nav a.active {
+      color: #ff8a00;
     }
 
     /* HERO */
-    .hero{
+    .hero {
       background:
-        linear-gradient(rgba(7,27,51,.86),rgba(7,27,51,.86)),
+        linear-gradient(rgba(7,27,51,.86), rgba(7,27,51,.86)),
         url("logo.jpg") center/cover;
-      min-height:330px;
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      text-align:center;
-      padding:50px 20px;
-      color:white;
+
+      min-height: 330px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 50px 20px;
+      color: white;
     }
 
-    .hero-content{
-      max-width:800px;
+    .hero-content {
+      max-width: 800px;
     }
 
-    .hero h1{
-      font-size:45px;
-      margin-bottom:12px;
+    .hero h1 {
+      font-size: 45px;
+      margin-bottom: 12px;
     }
 
-    .hero h1 span{
-      color:#ff8a00;
+    .hero h1 span {
+      color: #ff8a00;
     }
 
-    .hero p{
-      font-size:18px;
-      opacity:.95;
+    .hero p {
+      font-size: 18px;
     }
 
     /* PRODUCTS */
-    .products-section{
-      max-width:1200px;
-      margin:auto;
-      padding:70px 20px;
+    .products-section {
+      max-width: 1200px;
+      margin: auto;
+      padding: 70px 20px;
     }
 
-    .section-title{
-      text-align:center;
-      margin-bottom:45px;
+    .section-title {
+      text-align: center;
+      margin-bottom: 45px;
     }
 
-    .section-title h2{
-      font-size:34px;
-      color:#071b33;
-      margin-bottom:10px;
+    .section-title h2 {
+      font-size: 34px;
+      color: #071b33;
+      margin-bottom: 10px;
     }
 
-    .section-title h2 span{
-      color:#ff8a00;
+    .section-title h2 span {
+      color: #ff8a00;
     }
 
-    .section-title p{
-      color:#667085;
-      max-width:650px;
-      margin:auto;
+    .section-title p {
+      color: #667085;
+      max-width: 650px;
+      margin: auto;
     }
 
-    .products-grid{
-      display:grid;
-      grid-template-columns:repeat(3,1fr);
-      gap:28px;
+    .products-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 28px;
     }
 
-    .product-card{
-      background:white;
-      border-radius:16px;
-      overflow:hidden;
-      box-shadow:0 8px 25px rgba(0,0,0,.08);
-      transition:.3s;
-      border:1px solid #e8ecf1;
+    .product-card {
+      background: white;
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 8px 25px rgba(0,0,0,.08);
+      border: 1px solid #e8ecf1;
+      transition: .3s;
     }
 
-    .product-card:hover{
-      transform:translateY(-7px);
-      box-shadow:0 14px 32px rgba(0,0,0,.14);
+    .product-card:hover {
+      transform: translateY(-7px);
+      box-shadow: 0 14px 32px rgba(0,0,0,.14);
     }
 
-    .product-image{
-      width:100%;
-      height:270px;
-      background:#eef2f6;
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      overflow:hidden;
+    .product-image {
+      width: 100%;
+      height: 280px;
+      background: #eef2f6;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
     }
 
-    .product-image img{
-      width:100%;
-      height:100%;
-      object-fit:contain;
-      display:block;
+    .product-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      display: block;
     }
 
-    .product-info{
-      padding:24px;
+    .product-info {
+      padding: 24px;
     }
 
-    .product-info h3{
-      color:#071b33;
-      font-size:22px;
-      margin-bottom:8px;
+    .product-info h3 {
+      color: #071b33;
+      font-size: 22px;
+      margin-bottom: 8px;
     }
 
-    .product-description{
-      color:#667085;
-      font-size:14px;
-      margin-bottom:15px;
+    .product-description {
+      color: #667085;
+      font-size: 14px;
+      margin-bottom: 15px;
     }
 
-    .price{
-      font-size:22px;
-      font-weight:bold;
-      color:#ff8a00;
-      margin-bottom:18px;
+    .price {
+      font-size: 23px;
+      font-weight: bold;
+      color: #ff8a00;
+      margin-bottom: 18px;
     }
 
-    .order-btn{
-      display:block;
-      width:100%;
-      text-align:center;
-      background:#25D366;
-      color:white;
-      padding:13px 18px;
-      border-radius:8px;
-      text-decoration:none;
-      font-weight:bold;
-      transition:.3s;
+    .order-btn {
+      display: block;
+      width: 100%;
+      text-align: center;
+      background: #25D366;
+      color: white;
+      padding: 13px 18px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: .3s;
     }
 
-    .order-btn:hover{
-      background:#1ebe5d;
-      transform:translateY(-2px);
+    .order-btn:hover {
+      background: #1ebe5d;
+      transform: translateY(-2px);
     }
 
     /* INFO BOX */
-    .info-box{
-      margin-top:60px;
-      background:#071b33;
-      color:white;
-      border-radius:16px;
-      padding:40px 25px;
-      text-align:center;
+    .info-box {
+      margin-top: 60px;
+      background: #071b33;
+      color: white;
+      border-radius: 16px;
+      padding: 40px 25px;
+      text-align: center;
     }
 
-    .info-box h2{
-      color:#ff8a00;
-      margin-bottom:10px;
+    .info-box h2 {
+      color: #ff8a00;
+      margin-bottom: 10px;
     }
 
-    .info-box p{
-      max-width:700px;
-      margin:0 auto 20px;
-      opacity:.9;
+    .info-box p {
+      max-width: 700px;
+      margin: 0 auto 20px;
     }
 
-    .contact-btn{
-      display:inline-block;
-      background:#ff8a00;
-      color:white;
-      text-decoration:none;
-      padding:13px 25px;
-      border-radius:8px;
-      font-weight:bold;
-      transition:.3s;
-    }
-
-    .contact-btn:hover{
-      background:#e97800;
+    .contact-btn {
+      display: inline-block;
+      background: #ff8a00;
+      color: white;
+      text-decoration: none;
+      padding: 13px 25px;
+      border-radius: 8px;
+      font-weight: bold;
     }
 
     /* FOOTER */
-    footer{
-      background:#041222;
-      color:#d7dee8;
-      margin-top:50px;
-      padding:45px 20px 20px;
+    footer {
+      background: #041222;
+      color: #d7dee8;
+      margin-top: 50px;
+      padding: 45px 20px 20px;
     }
 
-    .footer-container{
-      max-width:1200px;
-      margin:auto;
-      display:grid;
-      grid-template-columns:repeat(3,1fr);
-      gap:35px;
+    .footer-container {
+      max-width: 1200px;
+      margin: auto;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 35px;
     }
 
-    footer h3{
-      color:white;
-      margin-bottom:15px;
+    footer h3 {
+      color: white;
+      margin-bottom: 15px;
     }
 
-    footer h3 span{
-      color:#ff8a00;
+    footer h3 span {
+      color: #ff8a00;
     }
 
-    footer p{
-      font-size:14px;
-      margin-bottom:8px;
+    footer p {
+      font-size: 14px;
+      margin-bottom: 8px;
     }
 
-    .footer-links{
-      list-style:none;
+    .footer-links {
+      list-style: none;
     }
 
-    .footer-links li{
-      margin-bottom:8px;
+    .footer-links li {
+      margin-bottom: 8px;
     }
 
-    .footer-links a{
-      color:#d7dee8;
-      text-decoration:none;
-      transition:.3s;
+    .footer-links a {
+      color: #d7dee8;
+      text-decoration: none;
     }
 
-    .footer-links a:hover{
-      color:#ff8a00;
+    .footer-links a:hover {
+      color: #ff8a00;
     }
 
-    .copyright{
-      max-width:1200px;
-      margin:35px auto 0;
-      padding-top:20px;
-      border-top:1px solid rgba(255,255,255,.12);
-      text-align:center;
-      font-size:13px;
-      color:#aab4c1;
+    .copyright {
+      max-width: 1200px;
+      margin: 35px auto 0;
+      padding-top: 20px;
+      border-top: 1px solid rgba(255,255,255,.12);
+      text-align: center;
+      font-size: 13px;
+      color: #aab4c1;
     }
 
-    .design-credit{
-      margin-top:8px;
-      color:#ff8a00;
-      font-weight:bold;
+    .design-credit {
+      margin-top: 8px;
+      color: #ff8a00;
+      font-weight: bold;
     }
 
-    /* WHATSAPP FLOATING BUTTON */
-    .whatsapp-float{
-      position:fixed;
-      width:58px;
-      height:58px;
-      bottom:22px;
-      right:22px;
-      background:#25D366;
-      color:white;
-      border-radius:50%;
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      text-decoration:none;
-      font-size:30px;
-      box-shadow:0 5px 18px rgba(0,0,0,.25);
-      z-index:9999;
-      transition:.3s;
+    /* WHATSAPP */
+    .whatsapp-float {
+      position: fixed;
+      width: 58px;
+      height: 58px;
+      bottom: 22px;
+      right: 22px;
+      background: #25D366;
+      color: white;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-decoration: none;
+      font-size: 30px;
+      box-shadow: 0 5px 18px rgba(0,0,0,.25);
+      z-index: 9999;
+      transition: .3s;
     }
 
-    .whatsapp-float:hover{
-      transform:scale(1.1);
+    .whatsapp-float:hover {
+      transform: scale(1.1);
     }
 
     /* MOBILE */
-    @media(max-width:850px){
+    @media (max-width: 850px) {
 
-      .menu-btn{
-        display:block;
+      .menu-btn {
+        display: block;
       }
 
-      nav{
-        display:none;
-        position:absolute;
-        top:72px;
-        left:0;
-        width:100%;
-        background:#071b33;
-        padding:20px;
-        box-shadow:0 8px 15px rgba(0,0,0,.2);
+      nav {
+        display: none;
+        position: absolute;
+        top: 72px;
+        left: 0;
+        width: 100%;
+        background: #071b33;
+        padding: 20px;
       }
 
-      nav.show{
-        display:block;
+      nav.show {
+        display: block;
       }
 
-      nav ul{
-        flex-direction:column;
-        gap:18px;
+      nav ul {
+        flex-direction: column;
+        gap: 18px;
       }
 
-      .products-grid{
-        grid-template-columns:repeat(2,1fr);
+      .products-grid {
+        grid-template-columns: repeat(2, 1fr);
       }
 
-      .footer-container{
-        grid-template-columns:1fr 1fr;
+      .footer-container {
+        grid-template-columns: 1fr 1fr;
       }
     }
 
-    @media(max-width:600px){
+    @media (max-width: 600px) {
 
-      .brand-text{
-        font-size:14px;
+      .brand-text {
+        font-size: 14px;
       }
 
-      .brand img{
-        width:42px;
-        height:42px;
+      .brand img {
+        width: 42px;
+        height: 42px;
       }
 
-      .hero{
-        min-height:280px;
+      .hero {
+        min-height: 280px;
       }
 
-      .hero h1{
-        font-size:32px;
+      .hero h1 {
+        font-size: 32px;
       }
 
-      .hero p{
-        font-size:15px;
+      .hero p {
+        font-size: 15px;
       }
 
-      .products-section{
-        padding:50px 15px;
+      .products-section {
+        padding: 50px 15px;
       }
 
-      .section-title h2{
-        font-size:28px;
+      .section-title h2 {
+        font-size: 28px;
       }
 
-      .products-grid{
-        grid-template-columns:1fr;
-        gap:22px;
+      .products-grid {
+        grid-template-columns: 1fr;
       }
 
-      .product-image{
-        height:280px;
+      .footer-container {
+        grid-template-columns: 1fr;
+        text-align: center;
       }
 
-      .footer-container{
-        grid-template-columns:1fr;
-        text-align:center;
-      }
-
-      .whatsapp-float{
-        width:54px;
-        height:54px;
-        bottom:16px;
-        right:16px;
-        font-size:28px;
+      .whatsapp-float {
+        width: 54px;
+        height: 54px;
+        bottom: 16px;
+        right: 16px;
+        font-size: 28px;
       }
     }
   </style>
@@ -461,17 +447,31 @@
         </div>
       </a>
 
-      <button class="menu-btn" onclick="toggleMenu()" aria-label="Open menu">
+      <button class="menu-btn" onclick="toggleMenu()">
         ☰
       </button>
 
       <nav id="mainNav">
         <ul>
-          <li><a href="index.html">Home</a></li>
-          <li><a href="about.html">About</a></li>
-          <li><a href="ceo.html">CEO</a></li>
-          <li><a href="products.html" class="active">Products</a></li>
-          <li><a href="contact.html">Contact</a></li>
+          <li>
+            <a href="index.html">Home</a>
+          </li>
+
+          <li>
+            <a href="about.html">About</a>
+          </li>
+
+          <li>
+            <a href="ceo.html">CEO</a>
+          </li>
+
+          <li>
+            <a href="products.html" class="active">Products</a>
+          </li>
+
+          <li>
+            <a href="contact.html">Contact</a>
+          </li>
         </ul>
       </nav>
 
@@ -482,11 +482,16 @@
   <!-- HERO -->
   <section class="hero">
     <div class="hero-content">
-      <h1>Our <span>Products</span></h1>
+
+      <h1>
+        Our <span>Products</span>
+      </h1>
+
       <p>
         Quality phone accessories and technology products
         from AMG Global Technology Nig. Ltd.
       </p>
+
     </div>
   </section>
 
@@ -495,27 +500,34 @@
   <section class="products-section">
 
     <div class="section-title">
-      <h2>Featured <span>Products</span></h2>
+
+      <h2>
+        Featured <span>Products</span>
+      </h2>
+
       <p>
-        Browse some of our available technology products.
+        Browse our available technology products.
         Contact us through WhatsApp to place your order.
       </p>
+
     </div>
 
 
     <div class="products-grid">
+
 
       <!-- CHARGER -->
       <div class="product-card">
 
         <div class="product-image">
           <img
-            src="Charger.jpg"
+            src="charger.jpg"
             alt="Fast Charger"
             loading="lazy">
         </div>
 
         <div class="product-info">
+
           <h3>Fast Charger</h3>
 
           <p class="product-description">
@@ -527,12 +539,15 @@
           </div>
 
           <a
-            href="https://wa.me/2348136080000?text=Hello%20AMG%20Global%2C%20I%20want%20to%20order%20the%20Fast%20Charger%20for%20₦5%2C000."
+            href="https://wa.me/2348136080000?text=Hello%20AMG%20Global%2C%20I%20want%20to%20order%20the%20Fast%20Charger%20for%20N5%2C000."
             class="order-btn"
             target="_blank"
             rel="noopener">
+
             💬 Order Now
+
           </a>
+
         </div>
 
       </div>
@@ -543,12 +558,13 @@
 
         <div class="product-image">
           <img
-            src="Power bank.png"
+            src="power bank.png"
             alt="Power Bank"
             loading="lazy">
         </div>
 
         <div class="product-info">
+
           <h3>Power Bank</h3>
 
           <p class="product-description">
@@ -560,12 +576,15 @@
           </div>
 
           <a
-            href="https://wa.me/2348136080000?text=Hello%20AMG%20Global%2C%20I%20want%20to%20order%20the%20Power%20Bank%20for%20₦15%2C000."
+            href="https://wa.me/2348136080000?text=Hello%20AMG%20Global%2C%20I%20want%20to%20order%20the%20Power%20Bank%20for%20N15%2C000."
             class="order-btn"
             target="_blank"
             rel="noopener">
+
             💬 Order Now
+
           </a>
+
         </div>
 
       </div>
@@ -577,11 +596,12 @@
         <div class="product-image">
           <img
             src="Bluetooth.png"
-            alt="Bluetooth Device"
+            alt="Bluetooth"
             loading="lazy">
         </div>
 
         <div class="product-info">
+
           <h3>Bluetooth</h3>
 
           <p class="product-description">
@@ -593,12 +613,52 @@
           </div>
 
           <a
-            href="https://wa.me/2348136080000?text=Hello%20AMG%20Global%2C%20I%20want%20to%20order%20the%20Bluetooth%20product%20for%20₦8%2C000."
+            href="https://wa.me/2348136080000?text=Hello%20AMG%20Global%2C%20I%20want%20to%20order%20the%20Bluetooth%20product%20for%20N8%2C000."
             class="order-btn"
             target="_blank"
             rel="noopener">
+
             💬 Order Now
+
           </a>
+
+        </div>
+
+      </div>
+
+
+      <!-- BATTERY -->
+      <div class="product-card">
+
+        <div class="product-image">
+          <img
+            src="battery.png"
+            alt="Battery"
+            loading="lazy">
+        </div>
+
+        <div class="product-info">
+
+          <h3>Battery</h3>
+
+          <p class="product-description">
+            Quality battery product available from AMG Global Technology.
+          </p>
+
+          <div class="price">
+            Contact Us
+          </div>
+
+          <a
+            href="https://wa.me/2348136080000?text=Hello%20AMG%20Global%2C%20I%20want%20to%20ask%20about%20the%20Battery."
+            class="order-btn"
+            target="_blank"
+            rel="noopener">
+
+            💬 Ask on WhatsApp
+
+          </a>
+
         </div>
 
       </div>
@@ -606,20 +666,24 @@
     </div>
 
 
-    <!-- CONTACT BOX -->
+    <!-- INFO -->
     <div class="info-box">
 
-      <h2>Need a Product?</h2>
+      <h2>
+        Need a Product?
+      </h2>
 
       <p>
-        Contact AMG Global Technology Nig. Ltd. for product
-        availability, more accessories and orders.
+        Contact AMG Global Technology Nig. Ltd.
+        for product availability, more accessories and orders.
       </p>
 
       <a
         href="contact.html"
         class="contact-btn">
+
         Contact Us
+
       </a>
 
     </div>
@@ -633,7 +697,10 @@
     <div class="footer-container">
 
       <div>
-        <h3>AMG <span>Global Technology</span></h3>
+
+        <h3>
+          AMG <span>Global Technology</span>
+        </h3>
 
         <p>
           AMG Global Technology Nig. Ltd.
@@ -642,30 +709,61 @@
         <p>
           Quality technology products and phone accessories.
         </p>
+
       </div>
 
 
       <div>
-        <h3>Quick Links</h3>
+
+        <h3>
+          Quick Links
+        </h3>
 
         <ul class="footer-links">
-          <li><a href="index.html">Home</a></li>
-          <li><a href="about.html">About</a></li>
-          <li><a href="ceo.html">CEO</a></li>
-          <li><a href="products.html">Products</a></li>
-          <li><a href="contact.html">Contact</a></li>
+
+          <li>
+            <a href="index.html">Home</a>
+          </li>
+
+          <li>
+            <a href="about.html">About</a>
+          </li>
+
+          <li>
+            <a href="ceo.html">CEO</a>
+          </li>
+
+          <li>
+            <a href="products.html">Products</a>
+          </li>
+
+          <li>
+            <a href="contact.html">Contact</a>
+          </li>
+
         </ul>
+
       </div>
 
 
       <div>
-        <h3>Contact</h3>
 
-        <p>📍 Bata Market, Kano State, Nigeria</p>
+        <h3>
+          Contact
+        </h3>
 
-        <p>📱 08136080000</p>
+        <p>
+          📍 Bata Market, Kano State, Nigeria
+        </p>
 
-        <p>💬 WhatsApp Available</p>
+        <p>
+          📱 08136080000
+        </p>
+
+        <p>
+          💬 WhatsApp Available
+        </p>
+
       </div>
 
     </div>
@@ -674,12 +772,15 @@
     <div class="copyright">
 
       © <span id="year"></span>
-      AMG Global Technology Nig. Ltd. All Rights Reserved.
+      AMG Global Technology Nig. Ltd.
+      All Rights Reserved.
 
       <div class="design-credit">
+
         Designed by Suhail Abubakar Gama
         <br>
         09135855029
+
       </div>
 
     </div>
@@ -694,15 +795,19 @@
     target="_blank"
     rel="noopener"
     aria-label="Chat with AMG Global Technology on WhatsApp">
+
     💬
+
   </a>
 
 
-  <!-- JAVASCRIPT -->
   <script>
 
-    function toggleMenu(){
-      document.getElementById("mainNav").classList.toggle("show");
+    function toggleMenu() {
+      document
+        .getElementById("mainNav")
+        .classList
+        .toggle("show");
     }
 
     document.getElementById("year").textContent =
